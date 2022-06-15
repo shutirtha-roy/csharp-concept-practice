@@ -125,14 +125,39 @@ namespace LINQ
             var orderByVehiclesMethod = vehicles.OrderBy(v => v.VehicleId);
             orderByVehiclesMethod = vehicles.OrderByDescending(v => v.VehicleId);
 
-            foreach (var vehicle in orderByVehiclesMethod)
-            {
-                Console.WriteLine(vehicle.VehicleName);
-            }
+            //foreach (var vehicle in orderByVehiclesMethod)
+            //{
+            //    Console.WriteLine(vehicle.VehicleName);
+            //}
 
 
             #endregion
+            #region ThenBy Query
+            var orderByThenVehiclesMethod = vehicles.OrderBy(v => v.VehicleId).ThenBy(v => v.Weight);
+            orderByThenVehiclesMethod = vehicles.OrderByDescending(v => v.VehicleId).ThenByDescending(v => v.Weight);
+            #endregion
+            #region GroupBy Query and ToLookup Query
 
+            //Query syntax
+            var groupedVehicleWeight = from v in vehicles
+                                       group v by v.Weight;
+
+            //Method syntax
+            groupedVehicleWeight = vehicles.GroupBy(v => v.Weight);
+
+            //ToLoopup 
+            groupedVehicleWeight = vehicles.ToLookup(v => v.Weight);
+
+            foreach (var ageGroup in groupedVehicleWeight)
+            {
+                Console.WriteLine($"Weight Group: {ageGroup.Key}"); //Every Group has 1 key 
+
+                foreach (Vehicle v in ageGroup) // Each group has collection within itself
+                {
+                    Console.WriteLine($"Vehicle Name: {v.VehicleName}");
+                }
+            }
+            #endregion
         }
     }
 }
