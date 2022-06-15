@@ -99,7 +99,39 @@ namespace LINQ
             intArray = randomBoxList.OfType<int>();
             //Console.WriteLine(string.Join(" ", intArray));
             #endregion
+            #region OrderBy
+            vehicles = new List<Vehicle>()
+            {
+                new Vehicle() { VehicleId = 1, VehicleName = "BMW", Weight = 30 },
+                new Vehicle() { VehicleId = 2, VehicleName = "Toyota", Weight = 50 },
+                new Vehicle() { VehicleId = 3, VehicleName = "Audi", Weight = 24 },
+                new Vehicle() { VehicleId = 4, VehicleName = "Alfa Romeo", Weight = 1 },
+                new Vehicle() { VehicleId = 5, VehicleName = "Tata", Weight = 45 }
+            };
 
+
+            //Query Syntax
+            var orderByVehicles = from v in vehicles
+                                  orderby v.VehicleId
+                                  select v;
+
+            var orderByVehiclesDescending = from v in vehicles
+                                            orderby v.VehicleId descending
+                                            select v.VehicleId;
+
+            //Console.WriteLine(string.Join(" ", orderByVehiclesDescending));
+
+            //Method Syntax
+            var orderByVehiclesMethod = vehicles.OrderBy(v => v.VehicleId);
+            orderByVehiclesMethod = vehicles.OrderByDescending(v => v.VehicleId);
+
+            foreach (var vehicle in orderByVehiclesMethod)
+            {
+                Console.WriteLine(vehicle.VehicleName);
+            }
+
+
+            #endregion
 
         }
     }
