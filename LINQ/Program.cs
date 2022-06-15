@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -28,7 +29,7 @@ namespace LINQ
             var oddNumbers = numbers.Where(num => num % 2 == 1).ToArray();
             //Console.WriteLine($"Odd numbers are {string.Join(" ", oddNumbers)}");
             #endregion
-            #region WHERE clause
+            #region WHERE Query
             //Console.WriteLine("WHERE clause");
             
 
@@ -79,8 +80,24 @@ namespace LINQ
 
             //Multiple WHERE Clause
             var newMethodSeperatedResult = vehicles.Where(v => v.Weight > 30).Where(v => v.Weight <= 50);
+            #endregion
+            #region OfType Query
+            ArrayList randomBoxList = new ArrayList();
+            randomBoxList.Add(1);
+            randomBoxList.Add("flower");
+            randomBoxList.Add(true);
+            randomBoxList.Add(5);
+            randomBoxList.Add(new Vehicle() { VehicleId = 0, VehicleName = "Cool Car", Weight = 32 });
 
+            //Query Syntax
+            var intArray = from v in randomBoxList.OfType<int>()
+                              select v;
 
+            //Console.WriteLine(string.Join(" ", intArray));
+
+            //Method Syntax
+            intArray = randomBoxList.OfType<int>();
+            //Console.WriteLine(string.Join(" ", intArray));
             #endregion
 
 
