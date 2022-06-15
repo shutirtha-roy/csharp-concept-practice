@@ -148,15 +148,66 @@ namespace LINQ
             //ToLoopup 
             groupedVehicleWeight = vehicles.ToLookup(v => v.Weight);
 
-            foreach (var ageGroup in groupedVehicleWeight)
-            {
-                Console.WriteLine($"Weight Group: {ageGroup.Key}"); //Every Group has 1 key 
+            //foreach (var ageGroup in groupedVehicleWeight)
+            //{
+            //    Console.WriteLine($"Weight Group: {ageGroup.Key}"); //Every Group has 1 key 
 
-                foreach (Vehicle v in ageGroup) // Each group has collection within itself
-                {
-                    Console.WriteLine($"Vehicle Name: {v.VehicleName}");
-                }
+            //    foreach (Vehicle v in ageGroup) // Each group has collection within itself
+            //    {
+            //        Console.WriteLine($"Vehicle Name: {v.VehicleName}");
+            //    }
+            //}
+            #endregion
+            #region Join Query
+            List<int> stringValuesOne = new List<int>()
+            {
+                1, 2, 3, 4
+            };
+
+            List<int> stringValuesTwo = new List<int>()
+            {
+                1, 2, 7, 8
+            };
+
+            vehicles = new List<Vehicle>()
+            {
+                new Vehicle() { VehicleId = 1, VehicleName = "BMW", Weight = 30, GeneralId = 1 },
+                new Vehicle() { VehicleId = 2, VehicleName = "Toyota", Weight = 50, GeneralId = 2 },
+                new Vehicle() { VehicleId = 3, VehicleName = "Audi", Weight = 24, GeneralId = 3 },
+                new Vehicle() { VehicleId = 4, VehicleName = "Alfa Romeo", Weight = 1, GeneralId = 1 },
+                new Vehicle() { VehicleId = 5, VehicleName = "Tata", Weight = 45, GeneralId = 2 }
+            };
+
+            IList<Tools> toolList = new List<Tools>()
+            {
+                new Tools(){ GeneralId = 1, ToolName = "Tool 1"  },
+                new Tools(){ GeneralId = 2, ToolName = "Tool 2"  },
+                new Tools(){ GeneralId = 3, ToolName = "Tool 3" }
+            };
+
+            //Method Syntax
+            var innerJoinVehicle = vehicles.Join(
+                                        toolList,
+                                        vehicle => vehicle.GeneralId,
+                                        tool => toolList.GeneralId,
+                                        (vehicle, tool) => new
+                                                    {
+                                                        VehicleName = vehicle.VehicleName,
+                                                        ToolName = tool.ToolName
+                                                    });
+
+
+            var innerJoinInt = stringValuesOne.Join(
+                            stringValuesTwo,
+                            stringOne => stringOne,
+                            stringTwo => stringTwo,
+                            (stringOne, stringTwo) => stringOne);
+
+            foreach(var val in innerJoinInt)
+            {
+                Console.WriteLine(val);
             }
+
             #endregion
         }
     }
