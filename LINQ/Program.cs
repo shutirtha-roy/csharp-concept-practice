@@ -332,7 +332,28 @@ namespace LINQ
             //}
 
             #endregion
+            #region All, Any
 
+            vehicles = new List<Vehicle>()
+            {
+                new Vehicle() { VehicleId = 1, VehicleName = "BMW", Weight = 30, GeneralId = 1 },
+                new Vehicle() { VehicleId = 2, VehicleName = "Toyota", Weight = 50, GeneralId = 2 },
+                new Vehicle() { VehicleId = 3, VehicleName = "Audi", Weight = 24, GeneralId = 3 },
+                new Vehicle() { VehicleId = 4, VehicleName = "Alfa Romeo", Weight = 1, GeneralId = 1 },
+                new Vehicle() { VehicleId = 5, VehicleName = "Tata", Weight = 45, GeneralId = 2 }
+            };
+
+            bool areAllVehiclesLight = vehicles.All(vehicle => vehicle.Weight > 20 && vehicle.Weight < 40);
+            //Console.WriteLine(areAllVehiclesLight);
+
+            bool areAnyVehiclesLight = vehicles.Any(vehicle => vehicle.Weight > 20 && vehicle.Weight < 40);
+            //Console.WriteLine(areAnyVehiclesLight);
+
+
+            #endregion
+            Console.WriteLine(vehicles.GetHashCode());
+
+            
         }
     }
 }
