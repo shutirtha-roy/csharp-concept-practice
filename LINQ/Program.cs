@@ -158,7 +158,7 @@ namespace LINQ
             //    }
             //}
             #endregion
-            #region Join Query
+            #region Join Query - INNER JOIN
             List<int> stringValuesOne = new List<int>()
             {
                 1, 2, 3, 4
@@ -168,6 +168,17 @@ namespace LINQ
             {
                 1, 2, 7, 8
             };
+
+            var innerJoinInt = stringValuesOne.Join(
+                            stringValuesTwo,
+                            stringOne => stringOne,
+                            stringTwo => stringTwo,
+                            (stringOne, stringTwo) => stringOne);
+
+            foreach (var val in innerJoinInt)
+            {
+                Console.WriteLine(val);
+            }
 
             vehicles = new List<Vehicle>()
             {
@@ -180,33 +191,27 @@ namespace LINQ
 
             IList<Tools> toolList = new List<Tools>()
             {
-                new Tools(){ GeneralId = 1, ToolName = "Tool 1"  },
-                new Tools(){ GeneralId = 2, ToolName = "Tool 2"  },
-                new Tools(){ GeneralId = 3, ToolName = "Tool 3" }
+                new Tools(){ Id = 1, ToolName = "Tool 1"  },
+                new Tools(){ Id = 2, ToolName = "Tool 2"  },
+                new Tools(){ Id = 3, ToolName = "Tool 3" }
             };
 
             //Method Syntax
             var innerJoinVehicle = vehicles.Join(
-                                        toolList,
-                                        vehicle => vehicle.GeneralId,
-                                        tool => toolList.GeneralId,
-                                        (vehicle, tool) => new
-                                                    {
-                                                        VehicleName = vehicle.VehicleName,
-                                                        ToolName = tool.ToolName
-                                                    });
+                        toolList,
+                        vehicle => vehicle.GeneralId,
+                        tool => tool.Id,
+                        (vehicle, tool) => new  // result selector
+                        {
+                            VehicleName = vehicle.VehicleName,
+                            ToolName = tool.ToolName
+                        });
 
+            //foreach (var pair in innerJoinVehicle)
+            //{
+            //    Console.WriteLine($"{pair.VehicleName}\t{pair.ToolName}");
+            //}
 
-            var innerJoinInt = stringValuesOne.Join(
-                            stringValuesTwo,
-                            stringOne => stringOne,
-                            stringTwo => stringTwo,
-                            (stringOne, stringTwo) => stringOne);
-
-            foreach(var val in innerJoinInt)
-            {
-                Console.WriteLine(val);
-            }
 
             #endregion
         }
