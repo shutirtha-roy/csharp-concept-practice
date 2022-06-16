@@ -169,16 +169,17 @@ namespace LINQ
                 1, 2, 7, 8
             };
 
+            //Method Syntax
             var innerJoinInt = stringValuesOne.Join(
                             stringValuesTwo,
                             stringOne => stringOne,
                             stringTwo => stringTwo,
                             (stringOne, stringTwo) => stringOne);
 
-            foreach (var val in innerJoinInt)
-            {
-                Console.WriteLine(val);
-            }
+            //foreach (var val in innerJoinInt)
+            //{
+            //    Console.WriteLine(val);
+            //}
 
             vehicles = new List<Vehicle>()
             {
@@ -196,7 +197,6 @@ namespace LINQ
                 new Tools(){ Id = 3, ToolName = "Tool 3" }
             };
 
-            //Method Syntax
             var innerJoinVehicle = vehicles.Join(
                         toolList,
                         vehicle => vehicle.GeneralId,
@@ -213,7 +213,18 @@ namespace LINQ
             //}
 
 
+            //Query Syntax
+            var innerJoinQuery = from v in vehicles
+                                 join t in toolList
+                                 on v.GeneralId equals t.Id
+                                 select new
+                                 {
+                                     VehicleName = v.VehicleName,
+                                     ToolName = t.ToolName
+                                 };
+
             #endregion
+
         }
     }
 }
