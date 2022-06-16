@@ -8,7 +8,7 @@ namespace LINQ
 {
     public class Tools
     {
-        public int ToolId { get; set; }
+        public int Id { get; set; }
         public string ToolName { get; set; }
         public int GeneralId { get; set; }
     }
