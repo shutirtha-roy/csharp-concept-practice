@@ -197,19 +197,34 @@ namespace LINQ
                 new Tools(){ Id = 3, ToolName = "Tool 3" }
             };
 
-            var innerJoinVehicle = vehicles.Join(
-                        toolList,
-                        vehicle => vehicle.GeneralId,
-                        tool => tool.Id,
-                        (vehicle, tool) => new  // result selector
-                        {
-                            VehicleName = vehicle.VehicleName,
-                            ToolName = tool.ToolName
-                        });
+            //var innerJoinVehicle = vehicles.Join(
+            //            toolList,
+            //            vehicle => vehicle.GeneralId,
+            //            tool => tool.Id,
+            //            (vehicle, tool) => new  // result selector
+            //            {
+            //                VehicleName = vehicle.VehicleName,
+            //                ToolName = tool.ToolName
+            //            });
 
             //foreach (var pair in innerJoinVehicle)
             //{
             //    Console.WriteLine($"{pair.VehicleName}\t{pair.ToolName}");
+            //}
+
+            var innerJoinVehicle = toolList.Join(
+                        vehicles,
+                        tool => tool.Id,
+                        vehicle => vehicle.GeneralId,
+                        (tool, vehicle) => new  // result selector
+                        {
+                            ToolName = tool.ToolName,
+                            VehicleName = vehicle.VehicleName
+                        });
+
+            //foreach (var pair in innerJoinVehicle)
+            //{
+            //    Console.WriteLine($"{pair.ToolName}\t{pair.VehicleName}");
             //}
 
 
@@ -222,6 +237,68 @@ namespace LINQ
                                      VehicleName = v.VehicleName,
                                      ToolName = t.ToolName
                                  };
+
+            #endregion
+            #region GROUP JOIN
+
+            vehicles = new List<Vehicle>()
+            {
+                new Vehicle() { VehicleId = 1, VehicleName = "BMW", Weight = 30, GeneralId = 1 },
+                new Vehicle() { VehicleId = 2, VehicleName = "Toyota", Weight = 50, GeneralId = 2 },
+                new Vehicle() { VehicleId = 3, VehicleName = "Audi", Weight = 24, GeneralId = 3 },
+                new Vehicle() { VehicleId = 4, VehicleName = "Alfa Romeo", Weight = 1, GeneralId = 1 },
+                new Vehicle() { VehicleId = 5, VehicleName = "Tata", Weight = 45, GeneralId = 2 }
+            };
+
+            toolList = new List<Tools>()
+            {
+                new Tools(){ GeneralId = 1, ToolName = "Tool 1"  },
+                new Tools(){ GeneralId = 2, ToolName = "Tool 2"  },
+                new Tools(){ GeneralId = 3, ToolName = "Tool 3" }
+            };
+
+
+            //Method Syntax
+            var groupJoin = toolList.GroupJoin(vehicles,
+                                tool => tool.GeneralId,
+                                vehicle => vehicle.GeneralId,
+                                (tool, vehiclesGroup) => new
+                                {
+                                    Vehicles = vehiclesGroup,
+                                    ToolFullName = tool.ToolName
+                                });
+
+            //foreach (var item in groupJoin)
+            //{
+            //    Console.WriteLine(item.ToolFullName);
+
+            //    foreach (var vehicle in item.Vehicles)
+            //    {
+            //        Console.WriteLine(vehicle.VehicleName);
+            //    }
+            //}
+
+
+            //Query Syntax
+            var groupNewJoin = from tool in toolList
+                                join vehicle in vehicles
+                                on tool.GeneralId equals vehicle.GeneralId
+                                into vehicleGroup
+                                select new
+                                {
+                                    Vehicles = vehicleGroup,
+                                    ToolName = tool.ToolName
+                                };
+
+            //foreach (var item in groupNewJoin)
+            //{
+            //    Console.WriteLine(item.ToolName);
+
+            //    foreach(var vehicle in item.Vehicles)
+            //    {
+            //        Console.WriteLine(vehicle.VehicleName);
+            //    }
+            //}
 
             #endregion
 
