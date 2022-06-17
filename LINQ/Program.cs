@@ -17,6 +17,7 @@ namespace LINQ
             int[] numbers = new int[] { 1, 2, 3, 4, 5 };
             //https://www.tutorialsteacher.com/linq
 
+
             # region Basic LINQ Query Syntax
             //Console.WriteLine("Query Syntax");
             var evenNumbers = (from num in numbers
