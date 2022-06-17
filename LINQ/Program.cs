@@ -15,7 +15,7 @@ namespace LINQ
         {
             //Basic Concepts
             int[] numbers = new int[] { 1, 2, 3, 4, 5 };
-            //https://www.tutorialsteacher.com/linq/linq-filtering-operators-where
+            //https://www.tutorialsteacher.com/linq
 
             # region Basic LINQ Query Syntax
             //Console.WriteLine("Query Syntax");
