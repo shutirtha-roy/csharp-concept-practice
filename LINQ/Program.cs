@@ -31,7 +31,7 @@ namespace LINQ
             #endregion
             #region WHERE Query
             //Console.WriteLine("WHERE clause");
-            
+
 
             List<Vehicle> vehicles = new List<Vehicle>()
             {
@@ -62,9 +62,9 @@ namespace LINQ
 
             //Multiple Where Clause
             var newSeperatedVehicles = (from vehicle in vehicles
-                                     where vehicle.Weight > 30
-                                     where vehicle.Weight <= 50
-                                     select vehicle.VehicleName).ToArray();
+                                        where vehicle.Weight > 30
+                                        where vehicle.Weight <= 50
+                                        select vehicle.VehicleName).ToArray();
 
             //Method Syntax
             //Console.WriteLine("Method Syntax");
@@ -91,7 +91,7 @@ namespace LINQ
 
             //Query Syntax
             var intArray = from v in randomBoxList.OfType<int>()
-                              select v;
+                           select v;
 
             //Console.WriteLine(string.Join(" ", intArray));
 
@@ -281,14 +281,14 @@ namespace LINQ
 
             //Query Syntax
             var groupNewJoin = from tool in toolList
-                                join vehicle in vehicles
-                                on tool.GeneralId equals vehicle.GeneralId
-                                into vehicleGroup
-                                select new
-                                {
-                                    Vehicles = vehicleGroup,
-                                    ToolName = tool.ToolName
-                                };
+                               join vehicle in vehicles
+                               on tool.GeneralId equals vehicle.GeneralId
+                               into vehicleGroup
+                               select new
+                               {
+                                   Vehicles = vehicleGroup,
+                                   ToolName = tool.ToolName
+                               };
 
             //foreach (var item in groupNewJoin)
             //{
@@ -313,10 +313,10 @@ namespace LINQ
 
             //Query Syntax
             var selectResultVehicle = from vehicle in vehicles
-                                      select new 
-                                      { 
-                                          Name = $"Awesome->{vehicle.VehicleName}", 
-                                          Weight = vehicle.Weight 
+                                      select new
+                                      {
+                                          Name = $"Awesome->{vehicle.VehicleName}",
+                                          Weight = vehicle.Weight
                                       };
 
             //Method Syntax
@@ -351,9 +351,6 @@ namespace LINQ
 
 
             #endregion
-            Console.WriteLine(vehicles.GetHashCode());
-
-            
         }
     }
 }
