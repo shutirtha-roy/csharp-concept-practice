@@ -19,6 +19,7 @@ namespace LINQ
 
 
 
+
             # region Basic LINQ Query Syntax
             //Console.WriteLine("Query Syntax");
             var evenNumbers = (from num in numbers
