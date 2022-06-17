@@ -9,7 +9,7 @@ namespace LINQ
     public class Vehicle
     {
         public int VehicleId { get; set; }
-        public string VehicleName { get; set; } 
+        public string VehicleName { get; set; }
         public int Weight { get; set; }
         public int GeneralId { get; set; }
     }
