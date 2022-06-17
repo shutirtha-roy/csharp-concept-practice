@@ -7,6 +7,7 @@ namespace Delegates
         public delegate int Operation(int x, int y);
         public delegate void MyDelegate(string msg);
         public delegate int MyDelegateInt();
+        public delegate T magic<T>(T param1, T param2);
 
         public static int Addition(int a, int b)
         {
@@ -36,6 +37,16 @@ namespace Delegates
         public static int TwoHundredMethod()
         {
             return 200;
+        }
+
+        public static int Sub(int numOne, int numTwo)
+        {
+            return numOne + numTwo;
+        }
+
+        public static string LinkString(string strOne, string strTwo)
+        {
+            return strOne + strTwo;
         }
 
         public static void Main(string[] args)
@@ -75,11 +86,16 @@ namespace Delegates
             MyDelegateInt twoHundred = TwoHundredMethod;
 
             MyDelegateInt threeHundred = hundred + twoHundred;
-            Console.WriteLine(threeHundred());
-
+            //Console.WriteLine(threeHundred.Invoke());
 
             #endregion
+            #region Generic Delegate
+            magic<int> subtract = Sub;
+            //Console.WriteLine(subtract.Invoke(1, 2));
 
+            magic<string> concatOne = LinkString;
+            //Console.WriteLine(concatOne("Hello ", "World"));
+            #endregion
 
         }
     }
