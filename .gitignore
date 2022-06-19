@@ -6,3 +6,6 @@
 /Delegates/bin
 /Delegates/obj
 /Delegates/*.csproj
+/Reflection/*.csproj
+/Reflection/obj
+/Reflection/bin
