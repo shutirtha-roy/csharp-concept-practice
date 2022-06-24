@@ -60,7 +60,11 @@ namespace Delegates
 
         #endregion
         #region Action Delegate
-
+        
+        public static void PrintValue(string value)
+        {
+            Console.WriteLine(value);
+        }
 
         #endregion
 
@@ -137,6 +141,21 @@ namespace Delegates
             #endregion
 
             #region Action Delegate
+            //Action<string> voidValue = new Action<string>(PrintValue);
+            Action<string> voidValue = PrintValue;
+            //voidValue("Hello");
+
+            //Anonymous method with Action delegate
+            Action<string> laughOutput = delegate (string value)
+                                        {
+                                            Console.WriteLine(value);
+                                        };
+
+            //laughOutput("Hahaha");
+
+            //Lambda expression with Action delegate
+            Action<string> cryOutput = (string value) => Console.WriteLine(value);
+            //cryOutput("Owa owa");
 
             #endregion
         }
