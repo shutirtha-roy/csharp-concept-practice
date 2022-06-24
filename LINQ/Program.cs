@@ -354,6 +354,26 @@ namespace LINQ
 
 
             #endregion
+            #region Contains
+
+            IList<string> stringFruitList = new List<string>() { "apple", "mango", "banana" };
+            bool resultFruit = stringFruitList.Contains("apple1");
+            //Console.WriteLine(resultFruit);
+
+            vehicles = new List<Vehicle>()
+            {
+                new Vehicle() { VehicleId = 1, VehicleName = "BMW", Weight = 30, GeneralId = 1 },
+                new Vehicle() { VehicleId = 2, VehicleName = "Toyota", Weight = 50, GeneralId = 2 },
+                new Vehicle() { VehicleId = 3, VehicleName = "Audi", Weight = 24, GeneralId = 3 },
+                new Vehicle() { VehicleId = 4, VehicleName = "Alfa Romeo", Weight = 1, GeneralId = 1 },
+                new Vehicle() { VehicleId = 5, VehicleName = "Tata", Weight = 45, GeneralId = 2 }
+            };
+
+            Vehicle vh = new Vehicle() { VehicleId = 2, VehicleName = "Toyota", Weight = 50 };
+
+            //Console.WriteLine(vehicles.Contains(vh, new VehicleComparer()));
+
+            #endregion
         }
     }
 }
