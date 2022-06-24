@@ -7,6 +7,11 @@ namespace Reflection
     {
         static void Main(string[] args)
         {
+            var specialProduct = Test<SpecialProduct>();
+            specialProduct.Price = 500;
+            Console.WriteLine(specialProduct.PriceAfterDiscount(20));
+
+
             Assembly assembly = Assembly.GetExecutingAssembly();
             Type[] types = assembly.GetTypes();
 
@@ -77,6 +82,14 @@ namespace Reflection
             //}
             #endregion
 
+        }
+
+        public static T Test<T>()
+        {
+            Type t = typeof(T);
+            ConstructorInfo constructor = t.GetConstructor(new Type[] { });
+            var item = constructor.Invoke(new object[] { });
+            return (T)item;
         }
 
     }
