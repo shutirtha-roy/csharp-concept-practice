@@ -52,7 +52,17 @@ namespace Delegates
         }
 
         #endregion
+        #region Func Delegate 
+        public static int Division(int x, int y)
+        {
+            return x / y;
+        }
 
+        #endregion
+        #region Action Delegate
+
+
+        #endregion
 
         public static void Main(string[] args)
         {
@@ -105,8 +115,30 @@ namespace Delegates
             #endregion
 
             #endregion
+            #region Func Delegate
+            Func<int, int, int> div = Division;
+            int output = div(10, 2);
+            //Console.WriteLine(output);
+
+            //Func with Anonymous Method
+            Func<int> getHundred = delegate ()
+                                {
+                                    return 100;
+                                };
+
+            //Console.WriteLine(getHundred());
 
 
+            //Func with Lambda Expression
+            Func<int> getTwoHundred = () => 200;
+            //Console.WriteLine(getTwoHundred());
+
+
+            #endregion
+
+            #region Action Delegate
+
+            #endregion
         }
     }
 }
