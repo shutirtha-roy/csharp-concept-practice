@@ -4,6 +4,8 @@ namespace Delegates
 {
     class Program
     {
+        #region Delegates
+
         public delegate int Operation(int x, int y);
         public delegate void MyDelegate(string msg);
         public delegate int MyDelegateInt();
@@ -49,8 +51,13 @@ namespace Delegates
             return strOne + strTwo;
         }
 
+        #endregion
+
+
         public static void Main(string[] args)
         {
+            #region Delegates
+
             #region Passing Delegate as a Parameter
             //Operation newOperationAddition = new Operation(Addition);
             Operation newOperationAddition = Addition;
@@ -96,6 +103,9 @@ namespace Delegates
             magic<string> concatOne = LinkString;
             //Console.WriteLine(concatOne("Hello ", "World"));
             #endregion
+
+            #endregion
+
 
         }
     }
