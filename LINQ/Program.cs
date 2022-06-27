@@ -374,6 +374,52 @@ namespace LINQ
             //Console.WriteLine(vehicles.Contains(vh, new VehicleComparer()));
 
             #endregion
+            #region Aggregate
+            IList<string> names = new List<string>() { "Samin", "Apurba", "Arnob" };
+
+            //Aggregate in Method Syntax C#
+            var commaNames = names.Aggregate((strOne, strTwo) => strOne + ", " + strTwo);
+            //Console.WriteLine(commaNames);
+
+            vehicles = new List<Vehicle>()
+            {
+                new Vehicle() { VehicleId = 1, VehicleName = "BMW", Weight = 30, GeneralId = 1 },
+                new Vehicle() { VehicleId = 2, VehicleName = "Toyota", Weight = 50, GeneralId = 2 },
+                new Vehicle() { VehicleId = 3, VehicleName = "Audi", Weight = 24, GeneralId = 3 },
+                new Vehicle() { VehicleId = 4, VehicleName = "Alfa Romeo", Weight = 1, GeneralId = 1 },
+                new Vehicle() { VehicleId = 5, VehicleName = "Tata", Weight = 45, GeneralId = 2 }
+            };
+
+            //Aggregate Method with Seed Value
+            string commaSeperatedVehicleNames = vehicles.Aggregate<Vehicle, string>(
+                                                "Vehicle Names: ",
+                                                (strOne, v) => strOne += v.VehicleName + ",");
+
+            //Console.WriteLine(commaSeperatedVehicleNames);
+
+
+            //Aggregate with Seed Value C#
+            int sumOfVehicleWeight = vehicles.Aggregate<Vehicle, int>(0,
+                                                (totalWeight, v) => totalWeight += v.Weight);
+
+            //Console.WriteLine(sumOfVehicleWeight);
+
+
+            //Aggregate Method with Result Selector
+            commaSeperatedVehicleNames = vehicles.Aggregate<Vehicle, string, string>(
+                                         String.Empty, //seed value
+                                         (strOne, v) => strOne += v.VehicleName + ",",
+                                         strOne => strOne.Substring(0, strOne.Length - 1));
+
+            //Console.WriteLine(commaSeperatedVehicleNames);
+
+            #endregion
+            #region Average
+
+
+
+            #endregion
+
         }
     }
 }
