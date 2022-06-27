@@ -13,6 +13,15 @@ namespace LINQ
         }
         static void Main(string[] args)
         {
+            #region Problems 
+            //Problem w3Resource
+            LINQProblemw3 problem = new();
+            problem.Excercise1();
+
+            #endregion
+
+
+
             //Basic Concepts
             int[] numbers = new int[] { 1, 2, 3, 4, 5 };
             //https://www.tutorialsteacher.com/linq
@@ -520,7 +529,7 @@ namespace LINQ
                                                     return 0;
                                                 });
 
-            Console.WriteLine(thirtySumVehicles);
+            //Console.WriteLine(thirtySumVehicles);
             #endregion
         }
     }
