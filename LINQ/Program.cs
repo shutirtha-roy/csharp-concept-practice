@@ -445,10 +445,44 @@ namespace LINQ
                 new Vehicle() { VehicleId = 5, VehicleName = "Tata", Weight = 45, GeneralId = 2 }
             };
 
-            Console.WriteLine(vehicles.Count());
-            Console.WriteLine(vehicles.Count(v => v.VehicleId % 2 == 0));
+            //Console.WriteLine(vehicles.Count());
+            //Console.WriteLine(vehicles.Count(v => v.VehicleId % 2 == 0));
 
 
+            #endregion
+            #region Max
+
+
+            digits = new List<int>() { 10, 60, 30, 44 };
+            //Console.WriteLine(digits.Max());
+            //Console.WriteLine(digits.Max(i => i % 2 == 0));
+
+            var largestEvenElements = digits.Max(i =>
+                                        {
+                                            if (i % 2 == 0)
+                                                return i;
+
+                                            return 0;
+                                        });
+
+            //Console.WriteLine(largestEvenElements);
+
+            vehicles = new List<Vehicle>()
+            {
+                new Vehicle() { VehicleId = 1, VehicleName = "BMW", Weight = 30, GeneralId = 1 },
+                new Vehicle() { VehicleId = 2, VehicleName = "Toyota", Weight = 50, GeneralId = 2 },
+                new Vehicle() { VehicleId = 3, VehicleName = "Audi", Weight = 24, GeneralId = 3 },
+                new Vehicle() { VehicleId = 4, VehicleName = "Alfa Romeo", Weight = 1, GeneralId = 1 },
+                new Vehicle() { VehicleId = 5, VehicleName = "Tata", Weight = 45, GeneralId = 2 }
+            };
+
+            int maxVehicleId = vehicles.Max(v => v.VehicleId);
+
+            //Console.WriteLine(maxVehicleId);
+
+
+            var vehicleName = vehicles.Max();
+            Console.WriteLine($"{vehicleName.VehicleId} => {vehicleName.VehicleName}");
             #endregion
         }
     }
