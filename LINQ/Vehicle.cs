@@ -15,7 +15,7 @@ namespace LINQ
 
         public int CompareTo(Vehicle other)
         {
-            if (this.VehicleName.Length >= other.VehicleName.Length)
+            if(this.VehicleName.Length >= other.VehicleName.Length)
                 return 1;
 
             return 0;
