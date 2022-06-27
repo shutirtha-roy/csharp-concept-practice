@@ -416,7 +416,7 @@ namespace LINQ
             #endregion
             #region Average
             IList<int> digits = new List<int>() { 10, 20, 30, 44 };
-            Console.WriteLine(digits.Average());
+            //Console.WriteLine(digits.Average());
 
             vehicles = new List<Vehicle>()
             {
@@ -427,11 +427,29 @@ namespace LINQ
                 new Vehicle() { VehicleId = 5, VehicleName = "Tata", Weight = 45, GeneralId = 2 }
             };
 
-            Console.WriteLine(vehicles.Average(v => v.Weight));
+            //Console.WriteLine(vehicles.Average(v => v.Weight));
 
 
             #endregion
+            #region Count
+            digits = new List<int>() { 10, 20, 30, 44 };
+            //Console.WriteLine(digits.Count());
+            //Console.WriteLine(digits.Count(i => i % 2 == 1));
 
+            vehicles = new List<Vehicle>()
+            {
+                new Vehicle() { VehicleId = 1, VehicleName = "BMW", Weight = 30, GeneralId = 1 },
+                new Vehicle() { VehicleId = 2, VehicleName = "Toyota", Weight = 50, GeneralId = 2 },
+                new Vehicle() { VehicleId = 3, VehicleName = "Audi", Weight = 24, GeneralId = 3 },
+                new Vehicle() { VehicleId = 4, VehicleName = "Alfa Romeo", Weight = 1, GeneralId = 1 },
+                new Vehicle() { VehicleId = 5, VehicleName = "Tata", Weight = 45, GeneralId = 2 }
+            };
+
+            Console.WriteLine(vehicles.Count());
+            Console.WriteLine(vehicles.Count(v => v.VehicleId % 2 == 0));
+
+
+            #endregion
         }
     }
 }
