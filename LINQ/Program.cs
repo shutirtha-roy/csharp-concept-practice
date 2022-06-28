@@ -16,18 +16,16 @@ namespace LINQ
             #region Problems 
             //Problem w3Resource
             LINQProblemw3 problem = new();
-            problem.Excercise1();
-
+            //problem.Excercise1();
+            //problem.Excercise2();
+            //problem.Excercise3();
+            //problem.Excercise4();
+            //problem.Excercise5();
+            //problem.Excercise6();
             #endregion
-
-
-
             //Basic Concepts
             int[] numbers = new int[] { 1, 2, 3, 4, 5 };
             //https://www.tutorialsteacher.com/linq
-
-
-
 
             # region Basic LINQ Query Syntax
             //Console.WriteLine("Query Syntax");
@@ -530,6 +528,44 @@ namespace LINQ
                                                 });
 
             //Console.WriteLine(thirtySumVehicles);
+            #endregion
+            #region ElementAt, ElementAtOrDefault
+
+            digits = new List<int>() { 10, 20, 30, 44, 31 };
+
+            //Console.WriteLine(digits.ElementAt(0));
+            //Console.WriteLine(digits.ElementAtOrDefault(6));
+
+            #endregion
+            #region First & FirstOrDefault
+
+            digits = new List<int>() { 10, 20, 30, 44, 31 };
+            //Console.WriteLine(digits.First());
+            //Console.WriteLine(digits.First(i => i % 2 == 1));
+            //Console.WriteLine(digits.FirstOrDefault(i => i % 2 == 1));
+            //Console.WriteLine(digits.First(i => i > 30));
+
+
+            IList<string> strV = new List<string>() { "One", "Two" };
+            //Console.WriteLine(strV.FirstOrDefault(s => s.Contains("w")));
+            #endregion
+            #region Last & LastOrDefault
+
+            digits = new List<int>() { 10, 20, 30, 44, 31 };
+            //Console.WriteLine(digits.Last());
+            //Console.WriteLine(digits.Last(i => i % 2 == 1));
+            //Console.WriteLine(digits.LastOrDefault(i => i % 2 == 0));
+            //Console.WriteLine(digits.Last(i => i > 30));
+
+            strV = new List<string>() { "One", "Two", "w" };
+            //Console.WriteLine(strV.LastOrDefault(s => s.Contains("w")));
+            #endregion
+            #region Single & SingleOrDefault
+
+            digits = new List<int>() { 10, 20, 30, 44, 31 };
+            //Console.WriteLine(digits.Single());
+            //Console.WriteLine(digits.SingleOrDefault());
+            //Console.WriteLine(digits.Single(i => i % 2 == 1));
             #endregion
         }
     }
