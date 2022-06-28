@@ -99,9 +99,28 @@ namespace LINQ
                                   CountDigit = g.Count()
                               };
 
-            foreach(var digit in countDigits)
+            //foreach(var digit in countDigits)
+            //{
+            //    Console.WriteLine($"Number {digit.Digit} appears {digit.CountDigit} times");
+            //}
+
+        }
+        public void Excercise5()
+        {
+            string fruit = "apple";
+
+            var getCharacters = from character in fruit
+                                group character by character into g
+                                select new
+                                {
+                                    FruitCharacter = g.Key,
+                                    FruitCharacterCount = g.Count()
+                                };
+
+            Console.WriteLine("The frequency of the characters are");
+            foreach(var fruitCharacter in getCharacters)
             {
-                Console.WriteLine($"Number {digit.Digit} appears {digit.CountDigit} times");
+                Console.WriteLine(fruitCharacter);
             }
 
         }
