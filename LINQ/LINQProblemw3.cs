@@ -74,7 +74,34 @@ namespace LINQ
 
             foreach (var digit in newDigits1)
             {
-                Console.WriteLine(digit);
+                //Console.WriteLine(digit);
+            }
+
+        }
+        public void Excercise4()
+        {
+            //Write a program in C# Sharp to display the number
+            //and frequency of number from giving array.
+            //Expected Output:
+            //The number and the Frequency are :
+            //Number 5 appears 3 times
+            //Number 9 appears 2 times
+            //Number 1 appears 1 times
+
+            int[] digits = new int[] { 1, 9, 5, 9, 5, 5 };
+
+            var countDigits = from digit in digits
+                              group digit by digit into g
+                              orderby g.Count() descending
+                              select new
+                              {
+                                  Digit = g.Key,
+                                  CountDigit = g.Count()
+                              };
+
+            foreach(var digit in countDigits)
+            {
+                Console.WriteLine($"Number {digit.Digit} appears {digit.CountDigit} times");
             }
 
         }
