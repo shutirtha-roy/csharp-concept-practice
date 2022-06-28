@@ -124,5 +124,32 @@ namespace LINQ
             }
 
         }
+        public void Excercise6()
+        {
+            //6.Write a program in C# Sharp to display
+            //the name of the days of a week. 
+            //Expected Output:
+            //Sunday
+            //Monday
+            //Tuesday
+            //Wednesday
+            //Thursday
+            //Friday
+            //Saturday
+
+            string[] weeks = new string[] { "Sunday", "Monday", "Tuesday"
+                , "Wednesday", "Thursday", "Friday", "Saturday" };
+
+            //var weekQuery1 = from week in weeks
+            //                 select week;
+
+            var weekQuery = weeks.Select(i => i );
+            
+            foreach(var week in weekQuery)
+            {
+                Console.WriteLine(week);
+            }
+        }
+
     }
 }
