@@ -627,6 +627,35 @@ namespace LINQ
 
 
             #endregion
+            #region Empty, Range, Repeat
+
+
+            //Empty
+            var emptyEnumerableCollectionOne = Enumerable.Empty<string>();
+            var emptyEnumerableCollectionTwo = Enumerable.Empty<Vehicle>();
+
+            //Console.WriteLine(emptyEnumerableCollectionOne.Count());
+            //Console.WriteLine(emptyEnumerableCollectionOne.GetType().Name);
+
+            //Console.WriteLine(emptyEnumerableCollectionTwo.Count());
+            //Console.WriteLine(emptyEnumerableCollectionTwo.GetType().Name);
+
+
+            //Range
+            var intValues = Enumerable.Range(10, 10);
+
+            //Console.WriteLine(intValues.Count());
+            //Console.WriteLine(intValues.ElementAtOrDefault(3));
+
+
+            //Repeat
+            var intRepeatValues = Enumerable.Repeat<int>(3, 5);
+
+            //foreach(var intRepeatValue in intRepeatValues)
+            //{
+            //    Console.WriteLine(intRepeatValue);
+            //}
+            #endregion
 
         }
     }
