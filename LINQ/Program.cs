@@ -567,6 +567,32 @@ namespace LINQ
             //Console.WriteLine(digits.SingleOrDefault());
             //Console.WriteLine(digits.Single(i => i % 2 == 1));
             #endregion
+            #region SequenceEqual
+
+            IList<string> strListOne = new List<string>() { "One", "Two", "Three", "Four", "Three" };
+            IList<string> strListTwo = new List<string>() { "One", "Two", "Three", "Four", "Three" };
+            //Console.WriteLine(strListOne.SequenceEqual(strListTwo));
+
+            IList<Vehicle> vehiclesOne = new List<Vehicle>()
+            {
+                new Vehicle() { VehicleId = 1, VehicleName = "BMW", Weight = 30, GeneralId = 1 },
+                new Vehicle() { VehicleId = 2, VehicleName = "Toyota", Weight = 50, GeneralId = 2 },
+                new Vehicle() { VehicleId = 3, VehicleName = "Audi", Weight = 24, GeneralId = 3 },
+                new Vehicle() { VehicleId = 4, VehicleName = "Alfa Romeo", Weight = 1, GeneralId = 1 },
+                new Vehicle() { VehicleId = 5, VehicleName = "Tata", Weight = 45, GeneralId = 2 }
+            };
+
+            IList<Vehicle> vehiclesTwo = new List<Vehicle>()
+            {
+                new Vehicle() { VehicleId = 1, VehicleName = "BMW", Weight = 30, GeneralId = 1 },
+                new Vehicle() { VehicleId = 2, VehicleName = "Toyota", Weight = 50, GeneralId = 2 },
+                new Vehicle() { VehicleId = 3, VehicleName = "Audi", Weight = 24, GeneralId = 3 },
+                new Vehicle() { VehicleId = 4, VehicleName = "Alfa Romeo", Weight = 1, GeneralId = 1 },
+                new Vehicle() { VehicleId = 5, VehicleName = "Tata", Weight = 45, GeneralId = 2 }
+            };
+
+            //Console.WriteLine(vehiclesOne.SequenceEqual(vehiclesTwo, new VehicleComparer()));
+            #endregion
         }
     }
 }
