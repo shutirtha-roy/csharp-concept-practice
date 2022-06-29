@@ -593,6 +593,41 @@ namespace LINQ
 
             //Console.WriteLine(vehiclesOne.SequenceEqual(vehiclesTwo, new VehicleComparer()));
             #endregion
+            #region Concat
+            IList<string> fruit1 = new List<string>() { "apple", "pineapple" };
+            IList<string> fruit2 = new List<string>() { "banana", "watermelon" };
+
+            var fruit3 = fruit1.Concat(fruit2);
+            //Console.WriteLine(string.Join(" ", fruit3));
+            #endregion
+            #region DefaultIfEmpty
+            IList<int> emptyInt = new List<int>() {  };
+            var list1 = emptyInt.DefaultIfEmpty();
+            var list2 = emptyInt.DefaultIfEmpty(-1);
+
+            //Console.WriteLine(list1.Count());
+            //Console.WriteLine(list1.ElementAt(0));
+
+            //Console.WriteLine(list2.Count());
+            //Console.WriteLine(list2.ElementAt(0));
+
+            IList<Vehicle> emptyVehicleList = new List<Vehicle>();
+            var newVehicleList1 = emptyVehicleList.DefaultIfEmpty(new Vehicle());
+            var newVehicleList2 = emptyVehicleList.DefaultIfEmpty(new Vehicle()
+                                                                {
+                                                                    VehicleId = 0,
+                                                                    VehicleName = ""
+                                                                });
+
+            //Console.WriteLine(newVehicleList1.Count());
+            //Console.WriteLine(newVehicleList1.ElementAt(0));
+
+            //Console.WriteLine(newVehicleList2.Count());
+            //Console.WriteLine(newVehicleList2.ElementAt(0).VehicleId);
+
+
+            #endregion
+
         }
     }
 }
