@@ -656,7 +656,29 @@ namespace LINQ
             //    Console.WriteLine(intRepeatValue);
             //}
             #endregion
+            #region Distinct
+            digits = new List<int>() { 1, 1, 1, 2, 4, 4, 6, 8 };
 
+            Console.WriteLine(string.Join(" ", digits));
+            Console.WriteLine(string.Join(" ", digits.Distinct()));
+
+            vehiclesOne = new List<Vehicle>()
+            {
+                new Vehicle() { VehicleId = 1, VehicleName = "BMW", Weight = 30, GeneralId = 1 },
+                new Vehicle() { VehicleId = 2, VehicleName = "Toyota", Weight = 50, GeneralId = 2 },
+                new Vehicle() { VehicleId = 3, VehicleName = "Audi", Weight = 24, GeneralId = 3 },
+                new Vehicle() { VehicleId = 1, VehicleName = "BMW", Weight = 30, GeneralId = 1 },
+                new Vehicle() { VehicleId = 5, VehicleName = "Tata", Weight = 45, GeneralId = 2 }
+            };
+
+            var distinctVehicle = vehiclesOne.Distinct(new VehicleComparer());
+
+            foreach(Vehicle vehicle in distinctVehicle)
+            {
+                Console.WriteLine(vehicle.VehicleName);
+            }
+
+            #endregion
         }
     }
 }
