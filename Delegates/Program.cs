@@ -74,6 +74,17 @@ namespace Delegates
         }
 
         #endregion
+        #region Anonymous Method
+
+        public delegate void ShowScreen(int num);
+
+        public static void ViewHelperMethod(ShowScreen screen, int num)
+        {
+            num += 10;
+            screen(num);
+        }
+
+        #endregion
 
         public static void Main(string[] args)
         {
@@ -181,6 +192,31 @@ namespace Delegates
             isLower = str => str.Equals(str.ToLower());
             resultLower = isLower("HELLO");
             //Console.WriteLine(resultLower);
+
+            #endregion
+            #region Anonymous Method
+            ShowScreen screen = delegate (int n)
+                                {
+                                    Console.WriteLine(n);
+                                };
+
+            //screen(5);
+
+            int incrementValue = 10;
+
+            ShowScreen newScreen = delegate (int n)
+                                    {
+                                        n += incrementValue;
+                                        Console.WriteLine(n);
+                                    };
+
+            //newScreen(3);
+            //ViewHelperMethod(delegate (int num)
+            //                {
+            //                    Console.WriteLine(num);
+            //                }, 5);
+
+
 
             #endregion
         }
