@@ -659,8 +659,8 @@ namespace LINQ
             #region Distinct
             digits = new List<int>() { 1, 1, 1, 2, 4, 4, 6, 8 };
 
-            Console.WriteLine(string.Join(" ", digits));
-            Console.WriteLine(string.Join(" ", digits.Distinct()));
+            //Console.WriteLine(string.Join(" ", digits));
+            //Console.WriteLine(string.Join(" ", digits.Distinct()));
 
             vehiclesOne = new List<Vehicle>()
             {
@@ -675,9 +675,42 @@ namespace LINQ
 
             foreach(Vehicle vehicle in distinctVehicle)
             {
-                Console.WriteLine(vehicle.VehicleName);
+                //Console.WriteLine(vehicle.VehicleName);
             }
 
+            #endregion
+            #region Except
+
+            IList<int> dig1 = new List<int>() { 1, 2, 4, 5, 6, 3 };
+            IList<int> dig2 = new List<int>() { 6, 11, 4, 5, 9, 4 };
+
+            var exceptResult = dig1.Except(dig2);
+            //Console.WriteLine(string.Join(" ", exceptResult));
+
+            vehiclesOne = new List<Vehicle>()
+            {
+                new Vehicle() { VehicleId = 1, VehicleName = "BMW", Weight = 30, GeneralId = 1 },
+                new Vehicle() { VehicleId = 2, VehicleName = "Toyota", Weight = 50, GeneralId = 2 },
+                new Vehicle() { VehicleId = 3, VehicleName = "Audi", Weight = 24, GeneralId = 3 },
+                new Vehicle() { VehicleId = 4, VehicleName = "Alfa Romeo", Weight = 1, GeneralId = 1 },
+                new Vehicle() { VehicleId = 5, VehicleName = "Tata", Weight = 45, GeneralId = 2 }
+            };
+
+            vehiclesTwo = new List<Vehicle>()
+            {
+                new Vehicle() { VehicleId = 6, VehicleName = "NewBMW", Weight = 10, GeneralId = 8 },
+                new Vehicle() { VehicleId = 7, VehicleName = "Workhorse", Weight = 40, GeneralId = 12 },
+                new Vehicle() { VehicleId = 3, VehicleName = "Audi", Weight = 24, GeneralId = 3 },
+                new Vehicle() { VehicleId = 7, VehicleName = "Waymo", Weight = 11, GeneralId = 11 },
+                new Vehicle() { VehicleId = 5, VehicleName = "Tata", Weight = 45, GeneralId = 2 }
+            };
+
+            var exceptVehicleResult = vehiclesOne.Except(vehiclesTwo, new VehicleComparer());
+            
+            foreach(var vehicle in exceptVehicleResult)
+            {
+                Console.WriteLine(vehicle.VehicleName);
+            }
             #endregion
         }
     }
