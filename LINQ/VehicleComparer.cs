@@ -19,7 +19,7 @@ namespace LINQ
 
         public int GetHashCode(Vehicle obj)
         {
-            return obj.GetHashCode();
+            return obj.VehicleId.GetHashCode();
         }
     }
 }
