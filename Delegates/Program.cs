@@ -67,6 +67,13 @@ namespace Delegates
         }
 
         #endregion
+        #region Predicate Delegate
+        public static bool IsLowerCase(string strValue)
+        {
+            return strValue.Equals(strValue.ToLower());
+        }
+
+        #endregion
 
         public static void Main(string[] args)
         {
@@ -139,7 +146,6 @@ namespace Delegates
 
 
             #endregion
-
             #region Action Delegate
             //Action<string> voidValue = new Action<string>(PrintValue);
             Action<string> voidValue = PrintValue;
@@ -156,6 +162,25 @@ namespace Delegates
             //Lambda expression with Action delegate
             Action<string> cryOutput = (string value) => Console.WriteLine(value);
             //cryOutput("Owa owa");
+
+            #endregion
+            #region Predicate Delegate
+
+            Predicate<string> isLower = IsLowerCase;
+            bool resultLower = isLower("HELLO");
+            //Console.WriteLine(resultLower);
+
+            isLower = delegate (string strValue)
+                    {
+                        return strValue.Equals(strValue.ToLower());
+                    };
+
+            resultLower = isLower("HELLO");
+            //Console.WriteLine(resultLower);
+
+            isLower = str => str.Equals(str.ToLower());
+            resultLower = isLower("HELLO");
+            //Console.WriteLine(resultLower);
 
             #endregion
         }
