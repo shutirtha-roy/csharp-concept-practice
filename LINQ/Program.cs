@@ -11,6 +11,11 @@ namespace LINQ
         {
             return vehicle.Weight > 30 && vehicle.Weight <= 50;
         }
+        static void GetReportTypeProperties<T>(T obj)
+        {
+            Console.WriteLine($"During Compile time => {typeof(T).Name}");
+            Console.WriteLine($"Actualy type => {obj.GetType().Name}");
+        }    
         static void Main(string[] args)
         {
             #region Problems 
@@ -812,7 +817,26 @@ namespace LINQ
 
 
             #endregion
+            #region Conversion Operators
 
+            dig1 = new List<int>() { 1, 2, 4, 5, 6, 3 };
+
+            //GetReportTypeProperties(vehicles);
+            //GetReportTypeProperties(vehicles.AsEnumerable());
+            //GetReportTypeProperties(vehicles.AsQueryable());
+            //GetReportTypeProperties(vehicles.Cast<Vehicle>());
+
+            int[] digArray = dig1.ToArray<int>();
+            IList<int> digList = digArray.ToList<int>();
+
+            IDictionary<int, Vehicle> vehicleDict = vehicles.ToDictionary<Vehicle, int>(v => v.VehicleId);
+
+            foreach(var key in vehicleDict.Keys)
+            {
+                //Console.WriteLine($"Key-> {key} , Value-> {(vehicleDict[key] as Vehicle).VehicleName}");
+            }
+
+            #endregion
         }
     }
 }
