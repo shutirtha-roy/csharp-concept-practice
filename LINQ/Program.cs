@@ -796,6 +796,22 @@ namespace LINQ
             skippedWhileDigits = stringSkipList.SkipWhile((s, i) => s.Length > i);
             //Console.WriteLine(string.Join(" ", skippedWhileDigits));
             #endregion
+            #region Take, TakeWhile
+
+            dig1 = new List<int>() { 1, 2, 4, 5, 6, 3 };
+            var takeDigits = dig1.Take(2);
+            //Console.WriteLine(string.Join(" ", takeDigits));
+
+            //SkipWhile
+            stringSkipList = new List<string>() { "hello", "knight", "I" };
+            var takeWhileDigits = stringSkipList.TakeWhile(s => s.Length > 1);
+            //Console.WriteLine(string.Join(" ", takeWhileDigits));
+
+            takeWhileDigits = stringSkipList.TakeWhile((s, i) => s.Length > i);
+            //Console.WriteLine(string.Join(" ", takeWhileDigits));
+
+
+            #endregion
 
         }
     }
