@@ -745,6 +745,57 @@ namespace LINQ
             //}
 
             #endregion
+            #region Union
+
+            dig1 = new List<int>() { 1, 2, 4, 5, 6, 3 };
+            dig2 = new List<int>() { 6, 11, 4, 5, 9, 4 };
+
+            exceptResult = dig1.Union(dig2);
+            //Console.WriteLine(string.Join(" ", exceptResult));
+
+            vehiclesOne = new List<Vehicle>()
+            {
+                new Vehicle() { VehicleId = 1, VehicleName = "BMW", Weight = 30, GeneralId = 1 },
+                new Vehicle() { VehicleId = 2, VehicleName = "Toyota", Weight = 50, GeneralId = 2 },
+                new Vehicle() { VehicleId = 3, VehicleName = "Audi", Weight = 24, GeneralId = 3 },
+                new Vehicle() { VehicleId = 4, VehicleName = "Alfa Romeo", Weight = 1, GeneralId = 1 },
+                new Vehicle() { VehicleId = 5, VehicleName = "Tata", Weight = 45, GeneralId = 2 }
+            };
+
+            vehiclesTwo = new List<Vehicle>()
+            {
+                new Vehicle() { VehicleId = 6, VehicleName = "NewBMW", Weight = 10, GeneralId = 8 },
+                new Vehicle() { VehicleId = 7, VehicleName = "Workhorse", Weight = 40, GeneralId = 12 },
+                new Vehicle() { VehicleId = 3, VehicleName = "Audi", Weight = 24, GeneralId = 3 },
+                new Vehicle() { VehicleId = 7, VehicleName = "Waymo", Weight = 11, GeneralId = 11 },
+                new Vehicle() { VehicleId = 5, VehicleName = "Tata", Weight = 45, GeneralId = 2 }
+            };
+
+            exceptVehicleResult = vehiclesOne.Union(vehiclesTwo, new VehicleComparer());
+
+            //foreach (var vehicle in exceptVehicleResult)
+            //{
+            //    Console.WriteLine(vehicle.VehicleName);
+            //}
+
+
+
+            #endregion
+            #region Skip, SkipWhile
+
+            //Skip
+            dig1 = new List<int>() { 1, 2, 4, 5, 6, 3 };
+            var skippedDigits = dig1.Skip(2);
+            //Console.WriteLine(string.Join(" ", skippedDigits));
+
+            //SkipWhile
+            IList<string> stringSkipList = new List<string>() { "hello", "knight", "I" };
+            var skippedWhileDigits = stringSkipList.SkipWhile(s => s.Length > 1);
+            //Console.WriteLine(string.Join(" ", skippedWhileDigits));
+
+            skippedWhileDigits = stringSkipList.SkipWhile((s, i) => s.Length > i);
+            //Console.WriteLine(string.Join(" ", skippedWhileDigits));
+            #endregion
 
         }
     }
