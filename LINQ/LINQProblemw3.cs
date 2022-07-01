@@ -152,6 +152,17 @@ namespace LINQ
         }
         public void Excercise7()
         {
+            //7.Write a program in C# Sharp to display numbers, multiplication of number with frequency and frequency of a number of giving array. Go to the editor
+            //Test Data:
+            //The numbers in the array are:
+            //5, 1, 9, 2, 3, 7, 4, 5, 6, 8, 7, 6, 3, 4, 5, 2
+            //Expected Output :
+            //Number Number*Frequency Frequency
+            //------------------------------------------------
+            //5 15 3
+            //1 1 1
+            //9 9 1
+            //2 4 2
             int[] arr = new int[] { 5, 1, 9, 2, 3, 7, 4, 5, 6, 8, 7, 6, 3, 4, 5, 2 };
             var outputQuery = from value in arr
                               group value by value into g
@@ -165,6 +176,50 @@ namespace LINQ
             foreach (var frequencyArray in outputQuery)
             {
                 Console.WriteLine($"{frequencyArray.Number} {frequencyArray.Times} {frequencyArray.Frequency}");
+            }
+        }
+        public void Excercise8()
+        {
+            //8.Write a program in C# Sharp to find the string which starts and ends with a specific character. Go to the editor
+            //Test Data:
+            //The cities are: 'ROME','LONDON','NAIROBI','CALIFORNIA','ZURICH','NEW DELHI','AMSTERDAM','ABU DHABI','PARIS'
+            //Input starting character for the string : A
+            //Input ending character for the string : M
+            //Expected Output :
+            //The city starting with A and ending with M is : AMSTERDAM
+            string[] cities = new string[] 
+            { 
+                "ROME", "LONDON", "NAIROBI", "CALIFORNIA", "ZURICH", "NEW DELHI", "AMSTERDAM", "ABU DHABI", "PARIS" 
+            };
+
+            var cityQuery = from city in cities
+                            where city.StartsWith('A') && city.EndsWith('M')
+                            select city;
+
+            Console.WriteLine(string.Join(" ", cityQuery));
+        }
+        public void Excercise9()
+        {
+            //9.Write a program in C# Sharp to create a list of numbers and display the numbers greater than 80 as output. Go to the editor
+            //Test Data:
+            //The members of the list are :
+            //55 200 740 76 230 482 95
+            //Expected Output :
+            //The numbers greater than 80 are:
+            //200
+            //740
+            //230
+            //482
+            //95
+            int[] members = new int[] { 55, 200, 740, 76, 230, 482, 95 };
+
+            var greaterMembers = from member in members
+                                 where member > 80
+                                 select member;
+
+            foreach(var number in greaterMembers)
+            {
+                Console.WriteLine(number);
             }
         }
 
