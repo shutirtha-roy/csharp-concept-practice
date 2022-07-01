@@ -150,6 +150,23 @@ namespace LINQ
                 Console.WriteLine(week);
             }
         }
+        public void Excercise7()
+        {
+            int[] arr = new int[] { 5, 1, 9, 2, 3, 7, 4, 5, 6, 8, 7, 6, 3, 4, 5, 2 };
+            var outputQuery = from value in arr
+                              group value by value into g
+                              select new
+                              {
+                                  Number = g.Key,
+                                  Times = g.Key * g.Count(),
+                                  Frequency = g.Count()
+                              };
+
+            foreach (var frequencyArray in outputQuery)
+            {
+                Console.WriteLine($"{frequencyArray.Number} {frequencyArray.Times} {frequencyArray.Frequency}");
+            }
+        }
 
     }
 }
