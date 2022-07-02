@@ -257,5 +257,27 @@ namespace LINQ
 
             Console.WriteLine(string.Join(" ", nineteryQuery));
         }
+        public void Excercise11()
+        {
+            Console.WriteLine("Test Data:\nThe members of the list are: ");
+
+            List<int> members = new List<int>();
+            string value;
+
+            while(!string.IsNullOrEmpty(value = Console.ReadLine()))
+            {
+                members.Add(int.Parse(value));
+            }
+
+            Console.Write("How many records you want to display ? : ");
+            int displayNum = int.Parse(Console.ReadLine());
+
+            var recordQuery = (from member in members
+                              orderby member descending
+                              select member).Take(displayNum);
+
+            foreach(var member in recordQuery)
+                Console.WriteLine(member);
+        }
     }
 }
