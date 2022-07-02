@@ -295,5 +295,15 @@ namespace LINQ
             }
 
         }
+        public void Excercise13()
+        {
+            int total = int.Parse(Console.ReadLine());
+            string[] animals = new string[total];
+
+            for (var i = 0; i < total; i++)
+                animals[i] = Console.ReadLine();
+
+            //Console.WriteLine(string.Join(", ", animals));
+        }
     }
 }
