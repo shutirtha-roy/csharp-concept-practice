@@ -279,5 +279,21 @@ namespace LINQ
             foreach(var member in recordQuery)
                 Console.WriteLine(member);
         }
+        public void Excercise12()
+        {
+            Console.Write("Input the string : ");
+            string sentence = Console.ReadLine();
+
+            Console.WriteLine("The UPPER CASE words are: ");
+            var queryWord = from word in sentence.Split(" ")
+                            where word.Any(char.IsUpper)
+                            select word;
+
+            foreach(var word in queryWord)
+            {
+                Console.WriteLine(word);
+            }
+
+        }
     }
 }
