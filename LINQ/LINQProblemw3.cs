@@ -259,6 +259,23 @@ namespace LINQ
         }
         public void Excercise11()
         {
+            //11.Write a program in C# Sharp to display the top n-th records. Go to the editor
+            //Test Data:
+            //The members of the list are :
+            //5
+            //7
+            //13
+            //24
+            //6
+            //9
+            //8
+            //7
+            //How many records you want to display ? : 3
+            //Expected Output :
+            //The top 3 records from the list are:
+            //24
+            //13
+            //9
             Console.WriteLine("Test Data:\nThe members of the list are: ");
 
             List<int> members = new List<int>();
@@ -281,6 +298,13 @@ namespace LINQ
         }
         public void Excercise12()
         {
+            //12.Write a program in C# Sharp to find the uppercase words in a string. Go to the editor
+            //Test Data:
+            //Input the string : this IS a STRING
+            //Expected Output:
+            //The UPPER CASE words are:
+            //IS
+            //STRING
             Console.Write("Input the string : ");
             string sentence = Console.ReadLine();
 
@@ -297,6 +321,16 @@ namespace LINQ
         }
         public void Excercise13()
         {
+            //13.Write a program in C# Sharp to convert a string array to a string. Go to the editor
+            //Test Data:
+            //Input number of strings to store in the array :3
+            //Input 3 strings for the array :
+            //Element[0] : cat
+            //Element[1] : dog
+            //Element[2] : rat
+            //Expected Output:
+            //Here is the string below created with elements of the above array :
+            //cat, dog, rat
             int total = int.Parse(Console.ReadLine());
             string[] animals = new string[total];
 
@@ -304,6 +338,42 @@ namespace LINQ
                 animals[i] = Console.ReadLine();
 
             //Console.WriteLine(string.Join(", ", animals));
+        }
+        public void Excercise14()
+        {
+            //14.Write a program in C# Sharp to find the n-th Maximum grade
+            //point achieved by the vehicles from the list of vehicles.
+            //Test Data:
+            //Which maximum grade point(1st, 2nd, 3rd, ...) you want to find : 3
+            //Expected Output:
+            //Id: 7, Name: BMW, achieved Weight Point: 63
+            //Id: 10, Name: Audi, achieved Weight Point: 50
+
+            var vehicles = new List<Vehicle>()
+            {
+                new Vehicle() { VehicleId = 1, VehicleName = "BMW", Weight = 30, GeneralId = 1 },
+                new Vehicle() { VehicleId = 2, VehicleName = "Toyota", Weight = 50, GeneralId = 2 },
+                new Vehicle() { VehicleId = 3, VehicleName = "Audi", Weight = 24, GeneralId = 3 },
+                new Vehicle() { VehicleId = 4, VehicleName = "Alfa Romeo", Weight = 1, GeneralId = 1 },
+                new Vehicle() { VehicleId = 5, VehicleName = "Tata", Weight = 45, GeneralId = 2 }
+            };
+
+            int maxGradePoint = int.Parse(Console.ReadLine());
+
+            var vehicleWeights = (from vehicle in vehicles
+                                  group vehicle by vehicle.Weight into weight
+                                  orderby weight.Key descending
+                                  select new
+                                  {
+                                      vehicleList = weight.ToArray()
+                                  }).Take(maxGradePoint).ToArray();
+
+            foreach(var vehicle in vehicleWeights)
+            {
+                var listVehicles = vehicle.vehicleList[0];
+                Console.WriteLine($"Id: {listVehicles.VehicleId}, Name: {listVehicles.VehicleName}, achieved Grade Point: {listVehicles.Weight}");
+            }
+                                
         }
     }
 }
