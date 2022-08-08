@@ -13,6 +13,7 @@ namespace AllClasses
         public double cgpa;
         public string address;
 
+
         public void UpdateCgpa(double newCgpa)
         {
             cgpa = newCgpa;
