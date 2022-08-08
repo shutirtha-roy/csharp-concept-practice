@@ -7,7 +7,7 @@ namespace AllClasses
     {
         static void Main(string[] args)
         {
-            #region Part One
+            #region Calling class with constructor parameters and properties
             Student student = new Student("Antu", 3.6, "Dhaka", new DateTime(1989, 2, 4));
             student.Name = "Roy";
             student.Cgpa = 3.3;
@@ -24,11 +24,14 @@ namespace AllClasses
             student2.Cgpa = 3.99;
             #endregion
 
-            #region Part Two
+            #region Static class and alternative instance of static
 
             var circleArea = AreaCalculator.GetCircleArea(20.5);
             var rectangleArea = AreaCalculator.GetRectangle(24, 12);
 
+            Circle c = new Circle();
+            c.Radius = 5;
+            Console.WriteLine(c.GetArea()); 
             #endregion
         }
     }
