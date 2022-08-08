@@ -12,6 +12,8 @@ namespace AllClasses
         public DateTime DateOfBirth { get; set; }
         private double cgpa;
         public string Address { get; set; }
+        private readonly string studentId;
+        public const double MAX_CGPA = 4.0;
         public double Cgpa
         {
             get
@@ -39,6 +41,7 @@ namespace AllClasses
             Name = name;
             Address = address;
             DateOfBirth = dateofBirth;
+            studentId = name.ToUpper().Substring(0, 2) + dateofBirth.Year;
         }
 
         //Destructor
