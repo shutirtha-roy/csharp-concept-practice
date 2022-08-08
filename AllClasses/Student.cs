@@ -43,6 +43,12 @@ namespace AllClasses
             DateOfBirth = dateofBirth;
         }
 
+        //Destructor
+        ~Student()
+        {
+
+        }
+
         //Method overloading
         public void UpdateDetails(DateTime dateOfBirth)
         {
