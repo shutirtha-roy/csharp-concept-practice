@@ -10,13 +10,19 @@ namespace AllClasses
     {
         public string name;
         public DateTime dateOfBirth;
-        public double cgpa;
+        private double cgpa;
         public string address;
-
-
-        public void UpdateCgpa(double newCgpa)
+        public double Cgpa
         {
-            cgpa = newCgpa;
+            get
+            {
+                return cgpa;
+            }
+            set
+            {
+                if (value >= 0)
+                    cgpa = value;
+            }
         }
     }
 }
