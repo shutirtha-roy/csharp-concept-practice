@@ -7,7 +7,8 @@ namespace AllClasses
     {
         static void Main(string[] args)
         {
-            Student student = new Student();
+            #region Part One
+            Student student = new Student("Antu", 3.6, "Dhaka", new DateTime(1989, 2, 4));
             student.Name = "Roy";
             student.Cgpa = 3.3;
             student.Address = "Dhaka";
@@ -21,7 +22,14 @@ namespace AllClasses
             student.Cgpa = 3.2;
             student2.Name = "Samin";
             student2.Cgpa = 3.99;
+            #endregion
 
+            #region Part Two
+
+            var circleArea = AreaCalculator.GetCircleArea(20.5);
+            var rectangleArea = AreaCalculator.GetRectangle(24, 12);
+
+            #endregion
         }
     }
 }
