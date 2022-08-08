@@ -8,10 +8,10 @@ namespace AllClasses
 {
     class Student
     {
-        public string name;
-        public DateTime dateOfBirth;
+        public string Name { get; set; }
+        public DateTime DateOfBirth { get; set; }
         private double cgpa;
-        public string address;
+        public string Address { get; set; }
         public double Cgpa
         {
             get
