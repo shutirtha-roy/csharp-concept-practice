@@ -1,4 +1,5 @@
 ﻿using System;
+using AllClasses;
 
 namespace AllClasses
 {
@@ -21,6 +22,20 @@ namespace AllClasses
             student2.Name = "Samin";
             student2.Cgpa = 3.99;
 
+        }
+    }
+}
+
+
+
+
+namespace Something
+{
+    public class Test
+    {
+        public static void TestMethod()
+        {
+            Student s1 = new Student();
         }
     }
 }
