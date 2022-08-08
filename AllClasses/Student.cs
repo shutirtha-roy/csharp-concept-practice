@@ -29,11 +29,9 @@ namespace AllClasses
 
         //Empty Constructor
         public Student()
+            : this (string.Empty, 0, string.Empty, DateTime.MinValue)
+            //this (parameters) is called constructor chaining
         {
-            Name = string.Empty;
-            cgpa = 0;
-            Address = string.Empty;
-            DateOfBirth = DateTime.MinValue;
         }
 
         public Student(string name, double cgpa, string address, DateTime dateofBirth)
