@@ -8,5 +8,14 @@ namespace AllClasses
 {
     class Student
     {
+        public string name;
+        public DateTime dateOfBirth;
+        public double cgpa;
+        public string address;
+
+        public void UpdateCgpa(double newCgpa)
+        {
+            cgpa = newCgpa;
+        }
     }
 }
