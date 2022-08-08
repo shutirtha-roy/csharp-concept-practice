@@ -7,18 +7,19 @@ namespace AllClasses
         static void Main(string[] args)
         {
             Student student = new Student();
-            student.name = "Roy";
-            student.cgpa = 3.4;
-            student.address = "Dhaka";
-            student.dateOfBirth = new DateTime(1999, 2, 2);
+            student.Name = "Roy";
+            student.Cgpa = 3.3;
+            student.Address = "Dhaka";
+            student.DateOfBirth = new DateTime(1999, 2, 2);
 
-            student.UpdateCgpa(3.76);
+            student.Cgpa = 3.76;
 
+            Console.WriteLine(student.Cgpa);
 
             Student student2 = new Student();
-            student2.cgpa = 3.5;
-            student2.name = "Samin";
-            student2.UpdateCgpa(3.99);
+            student.Cgpa = 3.2;
+            student2.Name = "Samin";
+            student2.Cgpa = 3.99;
 
         }
     }
