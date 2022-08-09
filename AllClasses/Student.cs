@@ -6,14 +6,12 @@ using System.Threading.Tasks;
 
 namespace AllClasses
 {
-    class Student
+    class Student : Person
     {
-        public string Name { get; set; }
-        public DateTime DateOfBirth { get; set; }
         private double cgpa;
-        public string Address { get; set; }
         private readonly string studentId;
         public const double MAX_CGPA = 4.0;
+        
         public double Cgpa
         {
             get
@@ -37,6 +35,7 @@ namespace AllClasses
         }
 
         public Student(string name, double cgpa, string address, DateTime dateofBirth)
+            : base("SD")
         {
             Name = name;
             Address = address;
