@@ -11,8 +11,8 @@ namespace AllClasses
         public string Username { get; set; }
         public string Password { get; set; }
         public Teacher()
+            : base("TC")
         {
-            IdPrefix = "TC";
         }
         
     }
