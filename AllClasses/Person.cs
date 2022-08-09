@@ -11,17 +11,22 @@ namespace AllClasses
         public string Name { get; set; }
         public DateTime DateOfBirth { get; set; }
         public string Address { get; set; }
-        public string IdPrefix;
+        protected readonly string idPrefix;
         public string GenerateId()
         {
             if (!string.IsNullOrEmpty(Name))
             {
-                return $"TC-{Name.Substring(0, 2)}";
+                return $"{idPrefix}-{Name.Substring(0, 2)}";
             }
             else
             {
                 return null;
             }
+        }
+
+        public Person(string idPrefix)
+        {
+            this.idPrefix = idPrefix;
         }
     }
 }
