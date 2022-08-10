@@ -36,6 +36,7 @@ namespace AllClasses
             #endregion
 
             #region Calling Class Library
+            //Course can only be accessed if it is public
             Course course = new Course();
             course.Title = "C++";
             Console.WriteLine(course.Title);
