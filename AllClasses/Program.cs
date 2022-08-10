@@ -1,5 +1,6 @@
 ﻿using System;
 using AllClasses;
+using CommonCode;
 
 namespace AllClasses
 {
@@ -31,7 +32,13 @@ namespace AllClasses
 
             Circle c = new Circle();
             c.Radius = 5;
-            Console.WriteLine(c.GetArea()); 
+            Console.WriteLine(c.GetArea());
+            #endregion
+
+            #region Calling Class Library
+            Course course = new Course();
+            course.Title = "C++";
+            Console.WriteLine(course.Title);
             #endregion
         }
     }
