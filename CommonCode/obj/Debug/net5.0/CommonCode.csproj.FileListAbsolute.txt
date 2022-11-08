@@ -1,0 +1,12 @@
+F:\Development\C#\csharp-concept-practice\CommonCode\bin\Debug\net5.0\CommonCode.deps.json
+F:\Development\C#\csharp-concept-practice\CommonCode\bin\Debug\net5.0\CommonCode.dll
+F:\Development\C#\csharp-concept-practice\CommonCode\bin\Debug\net5.0\ref\CommonCode.dll
+F:\Development\C#\csharp-concept-practice\CommonCode\bin\Debug\net5.0\CommonCode.pdb
+F:\Development\C#\csharp-concept-practice\CommonCode\obj\Debug\net5.0\CommonCode.csproj.AssemblyReference.cache
+F:\Development\C#\csharp-concept-practice\CommonCode\obj\Debug\net5.0\CommonCode.GeneratedMSBuildEditorConfig.editorconfig
+F:\Development\C#\csharp-concept-practice\CommonCode\obj\Debug\net5.0\CommonCode.AssemblyInfoInputs.cache
+F:\Development\C#\csharp-concept-practice\CommonCode\obj\Debug\net5.0\CommonCode.AssemblyInfo.cs
+F:\Development\C#\csharp-concept-practice\CommonCode\obj\Debug\net5.0\CommonCode.csproj.CoreCompileInputs.cache
+F:\Development\C#\csharp-concept-practice\CommonCode\obj\Debug\net5.0\CommonCode.dll
+F:\Development\C#\csharp-concept-practice\CommonCode\obj\Debug\net5.0\ref\CommonCode.dll
+F:\Development\C#\csharp-concept-practice\CommonCode\obj\Debug\net5.0\CommonCode.pdb
