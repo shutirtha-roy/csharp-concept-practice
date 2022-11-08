@@ -40,7 +40,10 @@ namespace AllClasses
             Name = name;
             Address = address;
             DateOfBirth = dateofBirth;
-            studentId = name.ToUpper().Substring(0, 2) + dateofBirth.Year;
+            if (!Name.Equals(""))
+                studentId = name.ToUpper().Substring(0, 2) + dateofBirth.Year;
+            else
+                studentId = "0";
         }
 
         //Destructor
