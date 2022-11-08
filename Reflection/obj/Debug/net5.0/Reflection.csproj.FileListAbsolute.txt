@@ -1,0 +1,16 @@
+F:\Development\C#\csharp-concept-practice\Reflection\bin\Debug\net5.0\Reflection.exe
+F:\Development\C#\csharp-concept-practice\Reflection\bin\Debug\net5.0\Reflection.deps.json
+F:\Development\C#\csharp-concept-practice\Reflection\bin\Debug\net5.0\Reflection.runtimeconfig.json
+F:\Development\C#\csharp-concept-practice\Reflection\bin\Debug\net5.0\Reflection.runtimeconfig.dev.json
+F:\Development\C#\csharp-concept-practice\Reflection\bin\Debug\net5.0\Reflection.dll
+F:\Development\C#\csharp-concept-practice\Reflection\bin\Debug\net5.0\ref\Reflection.dll
+F:\Development\C#\csharp-concept-practice\Reflection\bin\Debug\net5.0\Reflection.pdb
+F:\Development\C#\csharp-concept-practice\Reflection\obj\Debug\net5.0\Reflection.csproj.AssemblyReference.cache
+F:\Development\C#\csharp-concept-practice\Reflection\obj\Debug\net5.0\Reflection.GeneratedMSBuildEditorConfig.editorconfig
+F:\Development\C#\csharp-concept-practice\Reflection\obj\Debug\net5.0\Reflection.AssemblyInfoInputs.cache
+F:\Development\C#\csharp-concept-practice\Reflection\obj\Debug\net5.0\Reflection.AssemblyInfo.cs
+F:\Development\C#\csharp-concept-practice\Reflection\obj\Debug\net5.0\Reflection.csproj.CoreCompileInputs.cache
+F:\Development\C#\csharp-concept-practice\Reflection\obj\Debug\net5.0\Reflection.dll
+F:\Development\C#\csharp-concept-practice\Reflection\obj\Debug\net5.0\ref\Reflection.dll
+F:\Development\C#\csharp-concept-practice\Reflection\obj\Debug\net5.0\Reflection.pdb
+F:\Development\C#\csharp-concept-practice\Reflection\obj\Debug\net5.0\Reflection.genruntimeconfig.cache
