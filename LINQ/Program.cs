@@ -27,6 +27,14 @@ namespace LINQ
             //problem.Excercise4();
             //problem.Excercise5();
             //problem.Excercise6();
+            //problem.Excercise7();
+            //problem.Excercise8();
+            //problem.Excercise9();
+            //problem.Excercise10();
+            //problem.Excercise11();
+            //problem.Excercise12();
+            //problem.Excercise13();
+            problem.Excercise14();
             #endregion
             //Basic Concepts
             int[] numbers = new int[] { 1, 2, 3, 4, 5 };

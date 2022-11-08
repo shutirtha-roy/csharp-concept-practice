@@ -9,3 +9,9 @@
 /Reflection/*.csproj
 /Reflection/obj
 /Reflection/bin
+/Events/Events.csproj
+/Events/bin
+/Events/obj
+/InterfaceMethods/bin
+/InterfaceMethods/obj
+/InterfaceMethods/InterfaceMethods.csproj
