@@ -17,10 +17,14 @@
             #endregion
 
             #region Tree
-            Tree<string> tree = new Tree<string>();
-            tree.AddNode("Mango Tree");
-            tree.AddNode("Banana Tree");
-            Console.WriteLine(tree.DeleteNode("Banana Tree"));
+            //Tree<string> tree = new Tree<string>();
+            //tree.AddNode("Mango Tree");
+            //tree.AddNode("Banana Tree");
+            //Console.WriteLine(tree.DeleteNode("Banana Tree"));
+            #endregion
+
+            #region Printer
+            Printer<int>.Print<double>(5.5);
             #endregion
         }
     }

@@ -8,7 +8,7 @@ namespace Generics
 {
     public static class Printer<X>
     {
-        public static void Print<T>(T item) where T : class
+        public static void Print<T>(T item) where T : struct
         {
             T x = default(T);
             X a = default(X);

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.32106.194
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LINQ", "LINQ\LINQ.csproj", "{D4964551-F6D1-4542-9645-D7DFD3087C0B}"
 EndProject
@@ -16,6 +16,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AllClasses", "AllClasses\AllClasses.csproj", "{A7CCD2C3-8CE3-4531-A15A-A71928C3C4B0}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommonCode", "CommonCode\CommonCode.csproj", "{A460FDB6-1891-4C74-A436-095416F286C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generics", "Generics\Generics.csproj", "{FCE280AE-EA2A-46C2-9A35-75415697D03E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{A460FDB6-1891-4C74-A436-095416F286C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A460FDB6-1891-4C74-A436-095416F286C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A460FDB6-1891-4C74-A436-095416F286C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCE280AE-EA2A-46C2-9A35-75415697D03E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCE280AE-EA2A-46C2-9A35-75415697D03E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCE280AE-EA2A-46C2-9A35-75415697D03E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCE280AE-EA2A-46C2-9A35-75415697D03E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
