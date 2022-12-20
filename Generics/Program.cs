@@ -16,7 +16,12 @@
             //var pointTwo = new Point<int, Item>();
             #endregion
 
-
+            #region Tree
+            Tree<string> tree = new Tree<string>();
+            tree.AddNode("Mango Tree");
+            tree.AddNode("Banana Tree");
+            Console.WriteLine(tree.DeleteNode("Banana Tree"));
+            #endregion
         }
     }
 }
