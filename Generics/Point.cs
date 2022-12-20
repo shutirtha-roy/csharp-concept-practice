@@ -1,6 +1,7 @@
 ﻿namespace Generics
 {
-    public class Point<T, D>
+    public class Point<T, D> where D : ISummable, new()
+                             where T : struct
     {
         public T X;
         public D Y;
